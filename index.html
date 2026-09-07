@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminando con Cristo | Testimonio de Vida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a2b4c; /* Azul profundo y solemne */
+            --accent-color: #c5a059;  /* Dorado elegante */
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --white: #ffffff;
+            --whatsapp-color: #25d366;
+            --donation-color: #e67e22;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(rgba(26, 43, 76, 0.88), rgba(26, 43, 76, 0.92)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px 100px;
+            position: relative;
+        }
+
+        /* Estilo para la foto de la hermana */
+        .author-photo-container {
+            margin-bottom: 25px;
+        }
+
+        .author-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Tarjetas de Contenido (Libros y Audios) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Reproductor de Audio Moderno */
+        .audio-player-container {
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .audio-player-container label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            outline: none;
+        }
+
+        /* Botones de Descarga y Acción */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #111b32;
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #b08d4b;
+        }
+
+        /* Sección de Contacto y Donaciones */
+        .support-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .support-section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .support-section p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1rem;
+        }
+
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        .btn-donate {
+            background-color: var(--donation-color);
+            color: var(--white);
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-donate:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #cbd5e1;
+        }
+
+        /* Responsivo extra */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+            .support-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="author-photo-container">
+            <img src="foto-hermana.jpg" alt="Foto de la autora" class="author-photo">
+        </div>
+        
+        <h1>Caminando con Cristo</h1>
+        <p>Un testimonio vivo de lo que se pasa en el camino del Señor, y cómo Dios se manifiesta en cada prueba.</p>
+    </header>
+
+    <div class="container">
+        <div class="content-grid">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Volumen I</h3>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <blockquote style="border-left: 3px solid var(--accent-color); padding-left: 12px; margin-bottom: 15px; font-style: italic; color: var(--text-dark);">
+                            "Y en medio de cada prueba, aprendí que su mano nunca me soltó, incluso cuando el camino se hacía más oscuro..."
+                        </blockquote>
+                        
+                        <p>El relato genuino de los primeros pasos, las vivencias reales y cómo el Señor sostuvo a la hermana en los momentos más decisivos.</p>
+                        
+                        <div class="audio-player-container">
+                            <label><i class="fa-solid fa-headphones"></i> Escuchar Audio Vol. 1</label>
+                            <audio controls>
+                                <source src="audio-vol1.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="libro-vol1.pdf" class="btn btn-primary" download>
+                            <i class="fa-solid fa-book-open"></i> Leer Libro
+                        </a>
+                        <a href="audio-vol1.mp3" class="btn btn-accent" download>
+                            <i class="fa-solid fa-download"></i> Audio MP3
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Volumen II</h3>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <blockquote style="border-left: 3px solid var(--accent-color); padding-left: 12px; margin-bottom: 15px; font-style: italic; color: var(--text-dark);">
+                            "Cada lágrima sembrada en el desierto se convirtió en un testimonio vivo de su fidelidad inagotable..."
+                        </blockquote>
+                        
+                        <p>La continuidad de este caminar, reflejando las batallas superadas y cómo la gracia de Dios obró en cada temporada de la vida.</p>
+                        
+                        <div class="audio-player-container">
+                            <label><i class="fa-solid fa-headphones"></i> Escuchar Audio Vol. 2</label>
+                            <audio controls>
+                                <source src="audio-vol2.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="libro-vol2.pdf" class="btn btn-primary" download>
+                            <i class="fa-solid fa-book-open"></i> Leer Libro
+                        </a>
+                        <a href="audio-vol2.mp3" class="btn btn-accent" download>
+                            <i class="fa-solid fa-download"></i> Audio MP3
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="support-section">
+            <h2>Contacto y Apoyo al Ministerio</h2>
+            <p>Si este testimonio ha tocado tu corazón y deseas ponerte en contacto, o colaborar con una ofrenda voluntaria para la difusión de este mensaje, podés hacerlo a través de los siguientes medios:</p>
+            
+            <div class="support-buttons">
+                <a href="https://wa.me/549XXXXXXXXXX?text=Hola,%20estuve%20leyendo/escuchando%20Caminando%20con%20Cristo%20y%20quería%20contactarle..." class="btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> Contactar por WhatsApp
+                </a>
+                
+                <a href="#" class="btn-donate" target="_blank">
+                    <i class="fa-solid fa-hand-holding-heart fa-lg"></i> Realizar una Donación
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Caminando con Cristo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
